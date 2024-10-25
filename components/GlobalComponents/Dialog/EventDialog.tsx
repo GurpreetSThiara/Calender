@@ -7,12 +7,18 @@ export function EventDialog({ selectedDates, onClose, onAddEvent }) {
     const [title, setTitle] = useState('')
     const [time, setTime] = useState('')
     const validateForm = () => {
-       const res = validateMaxlength(title, 15);
+      console.log("first")
+       const res = validateMaxlength(title, 20);
        return res?.result;
     }
     const handleSubmit = (e) => {
-      e.preventDefault()
-      if(validateForm()){
+    
+      const r = validateForm();
+      console.log(r)
+      console.log(r)
+      console.log(r)
+      console.log(r)
+      if(r){
       selectedDates.forEach(date => {
         const [hours, minutes] = time.split(':')
         const eventDate = new Date(date)
@@ -29,10 +35,10 @@ export function EventDialog({ selectedDates, onClose, onAddEvent }) {
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold">Add Event</h2>
             <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5" /> {""}
             </button>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form >
             <div className="mb-4">
               <label htmlFor="title" className="block text-sm font-medium text-muted-foreground mb-1">
                 Event Title
@@ -67,7 +73,7 @@ export function EventDialog({ selectedDates, onClose, onAddEvent }) {
                 {selectedDates.map(date => date.toLocaleDateString()).join(', ')}
               </div>
             </div>
-            <button type="submit" className="w-full bg-primary text-primary-foreground rounded p-2">
+            <button type="button" className="w-full bg-primary text-primary-foreground rounded p-2" onClick={handleSubmit} >
               Add Event
             </button>
           </form>

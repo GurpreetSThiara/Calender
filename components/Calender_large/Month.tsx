@@ -88,16 +88,17 @@ interface Event {
           </h2>
           <div className="flex space-x-2">
             <button
+         
               className="p-2 rounded-full hover:bg-gray-100"
               onClick={() => onDateClick(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))}
             >
-              <ChevronLeft className="h-5 w-5 text-gray-600" />
+              <ChevronLeft className="h-5 w-5 text-gray-600" />   {""}
             </button>
             <button
               className="p-2 rounded-full hover:bg-gray-100"
               onClick={() => onDateClick(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))}
             >
-              <ChevronRight className="h-5 w-5 text-gray-600" />
+              <ChevronRight className="h-5 w-5 text-gray-600" />   {""}
             </button>
           </div>
         </div>
