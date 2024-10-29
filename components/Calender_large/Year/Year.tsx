@@ -1,6 +1,6 @@
 "use client"
 
-export function YearView({ currentDate, events, onDateClick }) {
+export function YearView({ currentDate,  onDateClick }) {
     const months = Array.from({ length: 12 }, (_, i) => new Date(currentDate.getFullYear(), i, 1))
   
     return (

@@ -15,7 +15,7 @@ export default function ClockComponent() {
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         const { width, height } = entry.contentRect
         const newSize = Math.min(width, height)
         setSize(newSize)

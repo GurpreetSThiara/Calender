@@ -1,6 +1,6 @@
 "use client"
 
-export function WeekView({ currentDate, events, onDateClick }) {
+export function WeekView({ currentDate, events }) {
     const startOfWeek = new Date(currentDate)
     startOfWeek.setDate(currentDate.getDate() - currentDate.getDay())
   

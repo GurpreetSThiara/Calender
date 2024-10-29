@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
-import { ChevronLeft, ChevronRight, Edit2Icon, MinusIcon, PlusIcon, RefreshCwIcon, Trash2Icon } from "lucide-react";
+import {  Edit2Icon, MinusIcon, PlusIcon, RefreshCwIcon, Trash2Icon } from "lucide-react";
 import { Event } from "@/types/CalenderTypes";
 import ClockComponent from "../GlobalComponents/Clock";
 
@@ -304,6 +304,10 @@ export const MonthView: React.FC<MonthViewProps> = function MonthView({
       document.removeEventListener('mouseup', handleMouseUp);
     };
   }, [handleMouseMove, handleMouseUp]);
+
+  useEffect(()=>{
+    setHoveredDate(null)
+  },[])
 
   return (
     <div ref={containerRef} className="flex-col flex lg:flex-row h-screen overflow-hidden">
