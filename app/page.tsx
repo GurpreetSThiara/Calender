@@ -18,7 +18,7 @@ export default function Calendar() {
   const [events, setEvents] = useState<{ [key: string]: Event[] }>();
 
   const [selectedDates, setSelectedDates] = useState<Date[]>([]);
-  const [selectedDate, setSelectedDate] = useState();
+  const [selectedDate, setSelectedDate] = useState<string>();
   const [isSelecting, setIsSelecting] = useState(false);
   const [showNewEventDialog, setShowNewEventDialog] = useState(false);
   const [showEventDialog, setShowEventDialog] = useState(false);
