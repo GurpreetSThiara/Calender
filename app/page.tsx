@@ -15,47 +15,7 @@ import CalendarTypeDropdown from '@/components/GlobalComponents/Dropdown/Calende
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState('Month');
-  const [events, setEvents] = useState<{ [key: string]: Event[] }>({
-    "2024-10-29": [
-      {
-        id: "5c6b6bd2-af4a-471c-a7cb-0de88ede9bf3",
-        title: "Diwali celebration",
-        description: "Diwali is a festival of lights.",
-        startDate: "2024-10-29T18:30:00.000Z",
-        endDate: "2024-10-29T18:30:00.000Z",
-        isAllDay: true,
-        color: "#be9b3c",
-        createdAt: "2024-10-28T06:34:58.185Z",
-        status: "confirmed",
-      }
-    ],
-    "2024-10-28": [
-      {
-        id: "7b1c6025-490d-4214-affe-c6a816779b0b",
-        title: "Client meeting",
-        description: "Client meeting is very important",
-        startDate: "2024-10-28T18:30:00.000Z",
-        endDate: "2024-10-28T18:30:00.000Z",
-        isAllDay: true,
-        color: "#0f6b6a",
-        createdAt: "2024-10-28T06:35:38.039Z",
-        status: "confirmed",
-      }
-    ],
-   "2024-10-07" :[
-      {
-          "id": "ee3a6c49-07ea-45cf-bcca-d15005052110",
-          "title": "svds",
-          "description": "sdvsd",
-          "startDate": "2024-10-07T11:26:00.000Z",
-          "endDate": "2024-10-07T11:26:00.000Z",
-          "isAllDay": false,
-          "color": "#6366F1",
-          "createdAt": "2024-10-28T09:26:46.866Z",
-          "status": "confirmed"
-      }
-  ]
-  });
+  const [events, setEvents] = useState<{ [key: string]: Event[] }>();
 
   const [selectedDates, setSelectedDates] = useState<Date[]>([]);
   const [selectedDate, setSelectedDate] = useState();
