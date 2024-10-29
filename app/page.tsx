@@ -14,7 +14,9 @@ import CalendarTypeDropdown from '@/components/GlobalComponents/Dropdown/Calende
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState('Month');
-  const [events, setEvents] = useState<{ [key: string]: Event[] }>();
+  const [events, setEvents] = useState<{ [key: string]: Event[] }>({
+  
+  });
 
   const [selectedDates, setSelectedDates] = useState<Date[]>([]);
   const [selectedDate, setSelectedDate] = useState<string>();
