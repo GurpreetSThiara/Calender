@@ -4,7 +4,6 @@ import React, { useState, useMemo, useEffect, useCallback, useRef } from "react"
 import {  Edit2Icon, MinusIcon, PlusIcon, RefreshCwIcon, Trash2Icon } from "lucide-react";
 import { Event } from "@/types/CalenderTypes";
 import ClockComponent from "../GlobalComponents/Clock";
-import { DraggableComponent } from "../GlobalComponents/Draggable";
 
 
 interface MonthViewProps {

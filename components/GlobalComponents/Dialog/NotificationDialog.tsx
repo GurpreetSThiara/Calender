@@ -1,10 +1,10 @@
 "use client"
 
-import { Search, X } from "lucide-react"
-import { useState } from "react"
+import { X } from "lucide-react"
+
 
 export function NotificationDialog({ onClose }) {
-    const [searchTerm, setSearchTerm] = useState('')
+    // const [searchTerm, setSearchTerm] = useState('')
   
   
   
