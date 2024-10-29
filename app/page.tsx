@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Search, Plus } from 'lucide-react';
 import { MonthView } from '@/components/Calender_large/Month';
-import { WeekView } from '@/components/Calender_large/Week/Week';
 import { YearView } from '@/components/Calender_large/Year/Year';
 import { DayView } from '@/components/Calender_large/Day/Day';
 import { SearchDialog } from '@/components/GlobalComponents/Dialog/SearchDialog';
@@ -114,9 +113,9 @@ export default function Calendar() {
          
           />
         )}
-        {view === 'Week' && <WeekView currentDate={currentDate} events={events} onDateClick={handleDateClick} />}
+        {/* {view === 'Week' && <WeekView currentDate={currentDate} events={events} onDateClick={handleDateClick} />} */}
         {view === 'Day' && <DayView currentDate={currentDate} events={events} />}
-        {view === 'Year' && <YearView currentDate={currentDate} events={events} onDateClick={handleDateClick} />}
+        {view === 'Year' && <YearView currentDate={currentDate}  onDateClick={handleDateClick} />}
       </main>
 
       {showNewEventDialog && selectedDates &&(
