@@ -34,11 +34,11 @@ export function NewEventDialog({ selectedDates, onClose, onAddEvent }: NewEventD
           id: crypto.randomUUID(),
           title,
           description,
-          startDate: eventDate.toISOString(),
-          endDate: eventDate.toISOString(), // Assuming endDate is the same as startDate for all-day events
+          startDate: eventDate,
+          endDate: eventDate, // Assuming endDate is the same as startDate for all-day events
           isAllDay,
           color,
-          createdAt: new Date().toISOString(),
+          createdAt: new Date(),
           status: 'confirmed'
         };
 
@@ -54,7 +54,7 @@ export function NewEventDialog({ selectedDates, onClose, onAddEvent }: NewEventD
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">Add Event</h2>
           <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5" />{""}
           </button>
         </div>
         <form>

@@ -105,10 +105,10 @@ const EventItem: React.FC<{ event: Event }> = React.memo(function EventItem({ ev
       </div>
       <div className="flex space-x-2">
         <button className="text-blue-500 hover:text-blue-600">
-          <Edit2Icon className="h-4 w-4" />
+          <Edit2Icon className="h-4 w-4" />{""}
         </button>
         <button className="text-red-500 hover:text-red-600">
-          <Trash2Icon className="h-4 w-4" />
+          <Trash2Icon className="h-4 w-4" />{""}
         </button>
       </div>
     </div>

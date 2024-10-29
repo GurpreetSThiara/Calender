@@ -18,7 +18,7 @@ export function SearchDialog({ onClose, onSearch }) {
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-xl font-semibold">Search Events</h2>
             <button onClick={onClose} className="text-muted-foreground hover:text-foreground">
-              <X className="w-5  h-5" />
+              <X className="w-5  h-5" />{""}
             </button>
           </div>
           <form onSubmit={handleSubmit}>
