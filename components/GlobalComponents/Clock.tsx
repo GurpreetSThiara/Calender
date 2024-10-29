@@ -163,9 +163,6 @@ export default function ClockComponent() {
     ctx.strokeStyle = '#e74c3c'
     ctx.lineWidth = size / 200
     ctx.lineCap = 'round'
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.2)'
-    ctx.shadowBlur = 5
-    ctx.shadowOffsetX = 1
     ctx.shadowOffsetY = 1
     ctx.stroke()
     ctx.restore()
@@ -184,9 +181,9 @@ export default function ClockComponent() {
   }, [time, size])
 
   return (
-    <div className="flex items-center justify-center  bg-gray-100 p-2">
-      <div 
-        ref={containerRef} 
+    <div className="flex items-center justify-center   p-2">
+      <div
+        ref={containerRef}
         className="w-full h-full max-w-[90vmin] max-h-[90vmin] aspect-square p-4 bg-white rounded-full shadow-xl"
       >
         <canvas

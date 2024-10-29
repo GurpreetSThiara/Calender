@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronLeft, ChevronRight, Search, Plus } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Search, Plus, Bell } from 'lucide-react';
 import { MonthView } from '@/components/Calender_large/Month';
 import { YearView } from '@/components/Calender_large/Year/Year';
 import { DayView } from '@/components/Calender_large/Day/Day';
@@ -10,6 +10,8 @@ import { NewEventDialog } from '@/components/GlobalComponents/Dialog/NewEventDia
 import { EventDialog } from '@/components/GlobalComponents/Dialog/EventsDialog';
 import { Event } from '@/types/CalenderTypes';
 import CalendarTypeDropdown from '@/components/GlobalComponents/Dropdown/CalenderType';
+import { NotificationDialog } from '@/components/GlobalComponents/Dialog/NotificationDialog';
+import { WeekView } from '@/components/Calender_large/Week/Week';
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -24,6 +26,7 @@ export default function Calendar() {
   const [showNewEventDialog, setShowNewEventDialog] = useState(false);
   const [showEventDialog, setShowEventDialog] = useState(false);
   const [showSearchDialog, setShowSearchDialog] = useState(false);
+  const [showNotificationsDoalog , setShowNotificationsDialog] = useState(false)
 
   const handleDateClick = (date: Date) => {
     if (isSelecting) {
@@ -35,6 +38,8 @@ export default function Calendar() {
       setShowEventDialog(true);
     }
   };
+
+  console.log(events)
 
   const handleAddEvent = (newEvent: Event) => {
     const eventDate = new Date(newEvent.startDate).toISOString().split('T')[0]; // Format date as YYYY-MM-DD
@@ -71,6 +76,9 @@ export default function Calendar() {
           </button>
           <button onClick={toggleSelecting} className={`p-2 rounded-full ${isSelecting ? 'bg-primary-foreground/20' : 'hover:bg-primary-foreground/20'}`}>
             <Plus className="w-5 h-5" />{""}
+          </button>
+          <button onClick={()=>setShowNotificationsDialog(true)} className={`p-2 rounded-full hover:bg-primary-foreground/20`}>
+            <Bell className="w-5 h-5" />{""}
           </button>
         </div>
       </header>
@@ -115,7 +123,7 @@ export default function Calendar() {
          
           />
         )}
-        {/* {view === 'Week' && <WeekView currentDate={currentDate} events={events} onDateClick={handleDateClick} />} */}
+        {view === 'Week' && <WeekView currentDate={currentDate} events={[]}  />}
         {view === 'Day' && <DayView currentDate={currentDate} events={events} />}
         {view === 'Year' && <YearView currentDate={currentDate}  onDateClick={handleDateClick} />}
       </main>
@@ -135,6 +143,10 @@ export default function Calendar() {
           events={events[selectedDate] || []}
      
         />
+      )}
+
+      {showNotificationsDoalog && (
+        <NotificationDialog onClose={()=>setShowNotificationsDialog(false)}/>
       )}
 
       {showSearchDialog && (

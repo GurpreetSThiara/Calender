@@ -1,7 +1,10 @@
+"use client"
+
 import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import {  Edit2Icon, MinusIcon, PlusIcon, RefreshCwIcon, Trash2Icon } from "lucide-react";
 import { Event } from "@/types/CalenderTypes";
 import ClockComponent from "../GlobalComponents/Clock";
+import { DraggableComponent } from "../GlobalComponents/Draggable";
 
 
 interface MonthViewProps {
@@ -132,7 +135,7 @@ export const MonthView: React.FC<MonthViewProps> = function MonthView({
     const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
     const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
     const prevMonthDays = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
-    const totalDays = 42; // 6 rows * 7 days
+    const totalDays = 35; // 6 rows * 7 days
     const nextMonthDays = totalDays - daysInMonth - firstDayOfMonth;
     return { daysInMonth, firstDayOfMonth, prevMonthDays, nextMonthDays };
   }, [currentDate]);
@@ -373,7 +376,7 @@ export const MonthView: React.FC<MonthViewProps> = function MonthView({
           </div>
           {/* events */}
         <div className="border p-2 rounded-lg ">
-        <div className="h-[20rem] overflow-y-auto rounded-scrollbar-container  "   >
+        <div className="max-h-[20rem] overflow-y-auto rounded-scrollbar-container  "   >
             <h3 className="text-lg font-semibold mb-2">Events This Month</h3>
             <div className="space-y-2">
               {allEvents.map((event, index) => (
@@ -384,7 +387,7 @@ export const MonthView: React.FC<MonthViewProps> = function MonthView({
         </div>
 
           <div className="">
-            <ClockComponent/>
+           <ClockComponent/>
           </div>
         </div>
       </div>
