@@ -23,3 +23,35 @@
     --muted-foreground: 215 20.2% 65.1%;
   }
 }
+
+
+
+
+.rounded-scrollbar-container::-webkit-scrollbar {
+
+  width: 0px; /* Scrollbar width */
+}
+
+.rounded-scrollbar-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+.rounded-scrollbar-container::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.rounded-scrollbar-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker color on hover */
+}
+
+.title {
+  font-size: 1.5rem; /* Title font size */
+  margin-bottom: 10px; /* Margin below the title */
+  color: #333; /* Title color */
+}
+
+.content {
+  color: #666; /* Text color */
+}
